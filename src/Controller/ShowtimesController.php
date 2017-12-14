@@ -27,6 +27,13 @@ class ShowtimesController extends AppController
 
         $this->set(compact('showtimes'));
         $this->set('_serialize', ['showtimes']);
+    
+        
+        $movies->find()->select(['name', 'duration']);
+        $query = $movies->find();
+        $query->hydrate(false); 
+        $result = $query->toList();
+
     }
 
     /**
@@ -44,6 +51,12 @@ class ShowtimesController extends AppController
 
         $this->set('showtime', $showtime);
         $this->set('_serialize', ['showtime']);
+        
+        $movies->find()->select(['name', 'duration']);
+        $query = $movies->find();
+        $query->hydrate(false); 
+        $result = $query->toList();
+
     }
 
     /**
