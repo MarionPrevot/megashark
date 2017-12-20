@@ -69,9 +69,7 @@
                 </td>
             </tr>
             <?php endforeach; ?>
-        </table>
-        <?php endif; ?>
-    <table>
+    </table>
     
     <table border="1">
             <tr>
@@ -84,19 +82,18 @@
                 <th scope="col">Dimanche</th>
             </tr>
             
-            
+            <tr>
                 <?php for($i = 1; $i <= 7 ; $i++): ?>
                     <td>
                         <?php if(isset($showtimesthisweek[$i])): ?>
                             <?php foreach($showtimesthisweek[$i] as $showtime): ?>
                                 <p><?php echo $showtime->movie->name ?></p>
                                 <p><?php echo $showtime->start->format('Y-m-d') . "/" . $showtime->end->format('Y-m-d') ?></p>
-                            <?php endforeach; ?>
+                            <?php endforeach; ?>             
                         <?php endif; ?>
-                    </td>
-                <?php endfor; ?>
+                     </td>
+                 <?php endfor; ?>
             </tr>
-            
         </table>
         <?php endif; ?>
     </div>
